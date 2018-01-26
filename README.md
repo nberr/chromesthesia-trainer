@@ -1,2 +1,3 @@
 # sound-to-color
 Senior Project: Chromesthesia Trainer
+Synesthesia can be described as a blending of senses. Chromesthesia is a type of synesthesia where the person associates colors with different sounds. In 2014, 33 individuals spent nine weeks reading text where each letter corresponded to a specific color1. At the end of the study, the participants still saw text in color even if it was printed in black and white. My goal is to create an application to help the user link intervals to certain colors. After making the application I would like to test the application over a three week period. I will compare those who trained with the program and those who had no training.
