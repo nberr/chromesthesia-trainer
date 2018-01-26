@@ -32,10 +32,8 @@ function randomSound() {
 
 }
 
-function playSound() {
-    var audio = new Audio('res/mp3/something.mp3');
-
-
+function playSound(interval) {
+    var audio = new Audio('res/audio/'.concat(interval, '/tmp.mp3'));
     audio.play();
 }
 
@@ -47,7 +45,7 @@ function playSomething() {
 
     setColor(my_colors[interval]);
 
-    playSound(randomSound());
+    playSound(interval);
 }
 
 function setColor(color) {
