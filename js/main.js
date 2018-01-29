@@ -21,9 +21,22 @@ var intervals = ["perfect_unison", "minor_second", "major_second", "minor_third"
                  "augmented_fourth", "perfect_fifth", "minor_sixth", "major_sixth", "minor_seventh", "major_seventh",
                  "perfect_octave"];
 
-var previous = "perfect_unison";
+var audio = null;
+
+var previous = null;
 
 /* var timer = Date.now();*/
+
+function playInOrder() {
+    var index;
+
+    for (index = 0; index < intervals.length; index++) {
+        setColor(my_colors[intervals[index]]);
+        playSound(intervals[index]);
+        /* wait till the sound is finished */
+        
+    }
+}
 
 function randomInterval() {
     return intervals[Math.floor(Math.random() * intervals.length)];
@@ -31,13 +44,17 @@ function randomInterval() {
 
 /* play the interval */
 function playSound(interval) {
-    var audio = new Audio('res/audio/'.concat('tmp/', interval, '.wav'));
+    /* if the previous play has not finished, stop it! */
+    if (audio != null) {
+        audio.pause();
+    }
+
+    audio = new Audio('res/audio/'.concat('tmp/', interval, '.wav'));
     audio.play();
 }
 
 /* this function gets called on a button press */
 function playSomething() {
-
     // get a random interval
     var interval = randomInterval();
 
