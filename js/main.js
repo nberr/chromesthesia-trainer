@@ -1,4 +1,3 @@
-document.writeln('Hello, world!');
 
 /* hard coded values */
 var my_colors = {
@@ -78,8 +77,8 @@ function playSound(interval) {
 
 /* plays the interval and changes the color */
 function playInterval(interval) {
-    setColor(my_colors[interval]);
-    playSound(interval);
+    setColor(my_colors[intervals[interval]]);
+    playSound(intervals[interval]);
 }
 
 /* this function gets called on a button press */
