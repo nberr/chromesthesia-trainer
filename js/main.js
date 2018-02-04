@@ -76,7 +76,11 @@ function playSound(interval) {
 
 }
 
-
+/* plays the interval and changes the color */
+function playInterval(interval) {
+    setColor(my_colors[interval]);
+    playSound(interval);
+}
 
 /* this function gets called on a button press */
 function playSomething() {

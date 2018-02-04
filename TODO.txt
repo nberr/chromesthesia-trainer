@@ -18,3 +18,7 @@ minor 6th   - 29 17 E4
 major 6th   - 28 16 Eb4
 minor 7th   - 27 15 D4
 octave      - 26 14 C4
+
+var intervals = ["perfect_unison", "minor_second", "major_second", "minor_third", "major_third", "perfect_fourth",
+                 "tritone", "perfect_fifth", "minor_sixth", "major_sixth", "minor_seventh", "major_seventh",
+                 "perfect_octave"];
