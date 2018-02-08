@@ -1,19 +1,19 @@
 
 /* hard coded values */
 var my_colors = {
-    perfect_unison : 'red',
-    minor_second   : 'orangered',
-    major_second   : 'orange',
-    minor_third    : 'tangerine',
-    major_third    : 'yellow',
-    perfect_fourth : 'yellowgreen',
-    tritone        : 'green',
-    perfect_fifth  : '#7BCCB5', /* blue green */
-    minor_sixth    : '#blue',
-    major_sixth    : 'blueviolet',
-    minor_seventh  : 'violet',
-    major_seventh  : 'mediumvioletred',
-    perfect_octave : 'red'
+    perfect_unison : '#c0c0c0',
+    minor_second   : '#000000',
+    major_second   : '#ff0000',
+    minor_third    : '#800000',
+    major_third    : '#ffff00',
+    perfect_fourth : '#707030',
+    tritone        : '#00ee00',
+    perfect_fifth  : '#009000',
+    minor_sixth    : '#00eeee',
+    major_sixth    : '#00a0a0',
+    minor_seventh  : '#0000ff',
+    major_seventh  : '#ff00ff',
+    perfect_octave : '#900090'
 };
 
 var intervals = ["perfect_unison", "minor_second", "major_second", "minor_third", "major_third", "perfect_fourth",
@@ -30,17 +30,6 @@ var audio = null;
 var previous = null;
 
 /* var timer = Date.now();*/
-
-function playInOrder() {
-    var index;
-
-    for (index = 0; index < intervals.length; index++) {
-        setColor(my_colors[intervals[index]]);
-        playSound(intervals[index]);
-        /* wait till the sound is finished */
-        
-    }
-}
 
 function randomRoot() {
     return roots[Math.floor(Math.random() * roots.length)];
