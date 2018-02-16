@@ -1,3 +1,4 @@
+//TODO: set the buttons to display the color rather than the name of the interval
 
 /* hard coded color values */
 var my_colors = {
@@ -30,95 +31,110 @@ var roots = ['c3', 'c#3', 'd3', 'd#3', 'e3', 'f3', 'f#3','g3', 'g#3', 'a3', 'a#3
     'c5'];
 
 
+// what is currently playing
+var playing = null;
+var curr_interval = null;
 
+// timer for test mode
+var timer_start = null;
+var total_time = null;
+var timer_func;
 
+var guesses;
 
-
-
-
-
-
-var audio = null;
-
-var previous = null;
-var answer = null;
-
-var timer = Date.now();
-
-function randomRoot() {
-    return roots[Math.floor(Math.random() * roots.length)];
+/*
+ * Used for practice mode
+ * Play the interval and set the appropriate color
+ */
+function practice_interval(interval) {
+    playInterval(intervals[interval]);
+    setColor(my_colors[intervals[interval]]);
 }
 
+function playInterval(interval) {
+
+    // check if the previous sound is still playing
+    if (playing != null) {
+        playing.pause();
+    }
+
+    // get the path to the audio file and play it
+    playing = new Audio(getAudioPath(interval, randomRoot()));
+    playing.play();
+
+    curr_interval = interval;
+}
+
+function setColor(color) {
+    document.body.style.background = color;
+}
+
+function getAudioPath(interval, root) {
+    //TODO: change this to use the root value to grab the proper audio file
+    return 'res/audio/'.concat('tmp/', interval, '.wav');
+}
+
+/*
+ * Use for testing mode
+ *
+ */
+function test_interval() {
+    // start the timer
+    timer_start = Date.now();
+
+    timer_func = setInterval(display_timer, 1000);
+
+    // reset the number of guesses
+    guesses = 0;
+
+    // play a random interval with a random root (but don't set the color)
+    // clear the color
+    playInterval(randomInterval(), randomRoot());
+    setColor('white');
+}
+
+function check_interval(interval) {
+
+    if (intervals[interval] === curr_interval) {
+        // you guessed correctly :)
+
+        // stop the timer
+        total_time = Date.now() - timer_start;
+
+        alert(total_time);
+
+        // they got it right so stop updating the timer
+        clearInterval(timer_func);
+    }
+    else {
+        // you guess wrong :(
+
+        //TODO: show the user how many wrong guesses
+        guesses++;
+        alert(guesses);
+
+        //TODO: maybe set the color for the user?
+        //setColor(my_colors[intervals[interval]]);
+    }
+}
+
+function display_timer() {
+    setColor(randomColor());
+}
+
+/*
+ * Random Functions : generate random things like interval, root, etc.
+ *
+ */
 function randomInterval() {
     return intervals[Math.floor(Math.random() * intervals.length)];
 }
 
-function randomSound() {
-
+function randomRoot() {
+    //TODO: change this to generate random roots when you have all the audio files
+    return 'c';
 }
 
-function start_test() {
-    /* generate a random interval */
-    playSomething();
-
-    /* start the timer */
-    timer = Date.now();
-
-    /* wait for the user to answer */
-    while (answer === null) {
-        if (answer === previous) {
-            /* correct answer; stop the timer */
-
-        }
-    }
-}
-
-function answer(interval) {
-    answer = interval;
-}
-
-/*
- * get the path to an interval
- *
- */
-function getPath(interval, root) {
-    return 'res/audio/'.concat('tmp/', interval, '.wav');
-}
-
-/* play the interval */
-function playSound(interval) {
-    /* if the previous play has not finished, stop it! */
-    if (audio != null) {
-        audio.pause();
-    }
-
-    audio = new Audio(getPath(interval, 'c'));
-    audio.play();
-
-}
-
-/* plays the interval and changes the color */
-function playInterval(interval) {
-    setColor(my_colors[intervals[interval]]);
-    playSound(intervals[interval]);
-}
-
-/* this function gets called on a button press */
-function playSomething() {
-    // get a random interval
-    var interval = randomInterval();
-
-    while (interval === previous) {
-        interval = randomInterval();
-    }
-    previous = interval;
-
-    setColor(my_colors[interval]);
-
-    playSound(interval);
-}
-
-/* set the background color */
-function setColor(color) {
-    document.body.style.background = color;
+function randomColor() {
+    return my_colors[randomInterval()];
 }
