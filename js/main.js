@@ -101,7 +101,8 @@ function check_interval(interval) {
         // stop the timer
         total_time = Date.now() - timer_start;
 
-        alert(total_time);
+        alert(Math.floor(total_time/1000) + "seconds");
+
 
         // they got it right so stop updating the timer
         clearInterval(timer_func);
@@ -119,7 +120,7 @@ function check_interval(interval) {
 }
 
 function display_timer() {
-    setColor(randomColor());
+    //setColor(randomColor());
 }
 
 /*
