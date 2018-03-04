@@ -101,7 +101,7 @@ function check_interval(interval) {
         // stop the timer
         total_time = Date.now() - timer_start;
 
-        alert(Math.floor(total_time/1000) + "seconds");
+        alert(Math.floor(total_time/1000) + " seconds");
 
 
         // they got it right so stop updating the timer
