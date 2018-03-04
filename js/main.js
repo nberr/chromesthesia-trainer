@@ -101,7 +101,7 @@ function check_interval(interval) {
         // stop the timer
         total_time = Date.now() - timer_start;
 
-        alert(Math.floor(total_time/1000) + " seconds");
+        //alert(Math.floor(total_time/1000) + " seconds");
 
 
         // they got it right so stop updating the timer
@@ -112,7 +112,8 @@ function check_interval(interval) {
 
         //TODO: show the user how many wrong guesses
         guesses++;
-        alert(guesses);
+        //alert(guesses);
+        document.getElementById("guessestext").innerHTML="Guesses: " + guesses;
 
         //TODO: maybe set the color for the user?
         //setColor(my_colors[intervals[interval]]);
@@ -121,6 +122,7 @@ function check_interval(interval) {
 
 function display_timer() {
     //setColor(randomColor());
+    document.getElementById("timertext").innerHTML="Timer: " + Math.floor((Date.now() - timer_start)/1000) + " seconds";
 }
 
 /*
