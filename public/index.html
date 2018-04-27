@@ -1,29 +1,43 @@
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
-    <title>Chromesthesia Trainer</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+  <title>Chromesthesia Trainer</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyCephZ7rWEFRiPQ2pbej93OfiNnZuMUFkY",
+          authDomain: "chromesthesia-trainer.firebaseapp.com",
+          databaseURL: "https://chromesthesia-trainer.firebaseio.com",
+          projectId: "chromesthesia-trainer",
+          storageBucket: "chromesthesia-trainer.appspot.com",
+          messagingSenderId: "354883781584"
+      };
+      firebase.initializeApp(config);
+  </script>
+
 </head>
 
 <body>
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
-        <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
-        <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
-    </div>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
+  <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
+</div>
 
-    <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p>This is the home page.</p>
-    </div>
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>This is the home page.</p>
+</div>
 
-    <div id="Practice" class="tabcontent">
-        Practice Mode<script src="js/main.js"></script>
-        <pre>
+<div id="Practice" class="tabcontent">
+  Practice Mode<script src="js/main.js"></script>
+  <pre>
             <input type="button" value="unison"onclick="practice_interval(0)">
             <input type="button" value="minor 2nd"onclick="practice_interval(1);">
             <input type="button" value="major 2nd"onclick="practice_interval(2)">
@@ -38,11 +52,11 @@
             <input type="button" value="major 7th"onclick="practice_interval(11);">
             <input type="button" value="octave"onclick="practice_interval(12);">
         </pre>
-    </div>
+</div>
 
-    <div id="Test" class="tabcontent">
-        Testing Mode<script src="js/main.js"></script>
-        <pre>
+<div id="Test" class="tabcontent">
+  Testing Mode<script src="js/main.js"></script>
+  <pre>
             <span id="timertext">Timer: 0</span>
             <span id="guessestext">Guesses: 0</span>
             <input type="button" value="start"onclick="test_interval()">
@@ -61,7 +75,7 @@
             <input type="button" value="octave"onclick="check_interval(12);">
 
         </pre>
-    </div>
+</div>
 
 </body>
 </html>
