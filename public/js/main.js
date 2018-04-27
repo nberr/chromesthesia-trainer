@@ -169,6 +169,7 @@ function login() {
     var user_email = document.getElementById("email_field").value;
     var user_pass = document.getElementById("password_field").value;
 
-
-
+    firebase.auth().signInWithEmailAndPassword(user_email, user_pass).catch(function (error) {
+        window.alert("ERROR");
+    });
 }
