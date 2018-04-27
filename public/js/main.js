@@ -165,6 +165,14 @@ function openTab(evt, tabName) {
 
 }
 
+function logout() {
+    firebase.auth().signOut().then(function() {
+       window.alert('Signed Out');
+    }, function(error) {
+        window.alert('Sign Out Error');
+    });
+}
+
 function login() {
     var user_email = document.getElementById("email_field").value;
     var user_pass = document.getElementById("password_field").value;
@@ -172,4 +180,13 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(user_email, user_pass).catch(function (error) {
         window.alert("ERROR");
     });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+           window.alert("Login was successful!");
+        } else {
+            window.alert("No user logged in");
+        }
+    });
+
 }
