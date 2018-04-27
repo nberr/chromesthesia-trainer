@@ -159,3 +159,11 @@ function openTab(evt, tabName) {
     setColor('white');
 
 }
+
+function login() {
+    var user_email = document.getElementById("email_field").value;
+    var user_pass = document.getElementById("password_field").value;
+
+
+
+}

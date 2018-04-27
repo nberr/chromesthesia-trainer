@@ -28,7 +28,9 @@
   <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
   <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
   <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
+    <button class="tablinks" onclick="openTab(event, 'Login')">Login</button>
 </div>
+
 
 <div id="Home" class="tabcontent">
   <h3>Home</h3>
@@ -36,45 +38,54 @@
 </div>
 
 <div id="Practice" class="tabcontent">
-  Practice Mode<script src="js/main.js"></script>
+            <h3>Practice Mode</h3>
+  <script src="js/main.js"></script>
   <pre>
-            <input type="button" value="unison"onclick="practice_interval(0)">
-            <input type="button" value="minor 2nd"onclick="practice_interval(1);">
-            <input type="button" value="major 2nd"onclick="practice_interval(2)">
-            <input type="button" value="minor 3rd"onclick="practice_interval(3)">
-            <input type="button" value="major 3rd"onclick="practice_interval(4);">
-            <input type="button" value="perfect 4th"onclick="practice_interval(5);">
-            <input type="button" value="tritone"onclick="practice_interval(6);">
-            <input type="button" value="perfect 5th"onclick="practice_interval(7);">
-            <input type="button" value="minor 6th"onclick="practice_interval(8);">
-            <input type="button" value="major 6th"onclick="practice_interval(9);">
-            <input type="button" value="minor 7th"onclick="practice_interval(10);">
-            <input type="button" value="major 7th"onclick="practice_interval(11);">
-            <input type="button" value="octave"onclick="practice_interval(12);">
+      <input type="button" value="unison"onclick="practice_interval(0)">
+      <input type="button" value="minor 2nd"onclick="practice_interval(1);">
+      <input type="button" value="major 2nd"onclick="practice_interval(2)">
+      <input type="button" value="minor 3rd"onclick="practice_interval(3)">
+      <input type="button" value="major 3rd"onclick="practice_interval(4);">
+      <input type="button" value="perfect 4th"onclick="practice_interval(5);">
+      <input type="button" value="tritone"onclick="practice_interval(6);">
+      <input type="button" value="perfect 5th"onclick="practice_interval(7);">
+      <input type="button" value="minor 6th"onclick="practice_interval(8);">
+      <input type="button" value="major 6th"onclick="practice_interval(9);">
+      <input type="button" value="minor 7th"onclick="practice_interval(10);">
+      <input type="button" value="major 7th"onclick="practice_interval(11);">
+      <input type="button" value="octave"onclick="practice_interval(12);">
         </pre>
 </div>
 
 <div id="Test" class="tabcontent">
-  Testing Mode<script src="js/main.js"></script>
+  <h3>Testing Mode</h3>
+    <script src="js/main.js"></script>
   <pre>
-            <span id="timertext">Timer: 0</span>
-            <span id="guessestext">Guesses: 0</span>
-            <input type="button" value="start"onclick="test_interval()">
-            <input type="button" value="unison"onclick="check_interval(0)">
-            <input type="button" value="minor 2nd"onclick="check_interval(1);">
-            <input type="button" value="major 2nd"onclick="check_interval(2)">
-            <input type="button" value="minor 3rd"onclick="check_interval(3)">
-            <input type="button" value="major 3rd"onclick="check_interval(4);">
-            <input type="button" value="perfect 4th"onclick="check_interval(5);">
-            <input type="button" value="tritone"onclick="check_interval(6);">
-            <input type="button" value="perfect 5th"onclick="check_interval(7);">
-            <input type="button" value="minor 6th"onclick="check_interval(8);">
-            <input type="button" value="major 6th"onclick="check_interval(9);">
-            <input type="button" value="minor 7th"onclick="check_interval(10);">
-            <input type="button" value="major 7th"onclick="check_interval(11);">
-            <input type="button" value="octave"onclick="check_interval(12);">
+      <span id="timertext">Timer: 0</span>
+      <span id="guessestext">Guesses: 0</span>
+      <input type="button" value="start"onclick="test_interval()">
+      <input type="button" value="unison"onclick="check_interval(0)">
+      <input type="button" value="minor 2nd"onclick="check_interval(1);">
+      <input type="button" value="major 2nd"onclick="check_interval(2)">
+      <input type="button" value="minor 3rd"onclick="check_interval(3)">
+      <input type="button" value="major 3rd"onclick="check_interval(4);">
+      <input type="button" value="perfect 4th"onclick="check_interval(5);">
+      <input type="button" value="tritone"onclick="check_interval(6);">
+      <input type="button" value="perfect 5th"onclick="check_interval(7);">
+      <input type="button" value="minor 6th"onclick="check_interval(8);">
+      <input type="button" value="major 6th"onclick="check_interval(9);">
+      <input type="button" value="minor 7th"onclick="check_interval(10);">
+      <input type="button" value="major 7th"onclick="check_interval(11);">
+      <input type="button" value="octave"onclick="check_interval(12);">
 
         </pre>
+</div>
+
+<div id="Login" class="tabcontent">
+    <input type="email" id="email_field">
+    <input type="password" id="password_field">
+    <input type="button" value="login" onclick="login()">
+
 </div>
 
 </body>
