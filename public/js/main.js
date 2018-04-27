@@ -46,9 +46,14 @@ var guesses;
  * Used for practice mode
  * Play the interval and set the appropriate color
  */
-function practice_interval(interval) {
+async function practice_interval(interval) {
     playInterval(intervals[interval]);
+    await sleep(2000);
     setColor(my_colors[intervals[interval]]);
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function playInterval(interval) {
