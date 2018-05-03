@@ -4,8 +4,8 @@
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 
-    padding-right: 100px; /* 3 */
-    padding-left:  100px; /* 3 */
+    padding-right: 200px; /* 3 */
+    padding-left:  200px; /* 3 */
 }
 
 /* Style the buttons inside the tab */
@@ -62,11 +62,22 @@
 }
 
 .wrapper {
-    margin-right: 200px; /* 1 */
-    margin-left:  200px; /* 1 */
+    margin-right: 500px; /* 1 */
+    margin-left:  500px; /* 1 */
 
     max-width: 960px; /* 2 */
 
     padding-right: 10px; /* 3 */
     padding-left:  10px; /* 3 */
 }
+
+.wrapperpara {
+    margin-right: 20px; /* 1 */
+    margin-left:  20px; /* 1 */
+
+    max-width: 960px; /* 2 */
+
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+}
+
