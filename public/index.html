@@ -2,94 +2,86 @@
 <html lang="en">
 
 <head>
-  <title>Chromesthesia Trainer</title>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Chromesthesia Trainer</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
+    <!-- link my css file -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script>
-      // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyCephZ7rWEFRiPQ2pbej93OfiNnZuMUFkY",
-          authDomain: "chromesthesia-trainer.firebaseapp.com",
-          databaseURL: "https://chromesthesia-trainer.firebaseio.com",
-          projectId: "chromesthesia-trainer",
-          storageBucket: "chromesthesia-trainer.appspot.com",
-          messagingSenderId: "354883781584"
-      };
-      firebase.initializeApp(config);
-  </script>
+    <!-- link w3 css file for containers -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <!-- firebase stuff -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCephZ7rWEFRiPQ2pbej93OfiNnZuMUFkY",
+            authDomain: "chromesthesia-trainer.firebaseapp.com",
+            databaseURL: "https://chromesthesia-trainer.firebaseio.com",
+            projectId: "chromesthesia-trainer",
+            storageBucket: "chromesthesia-trainer.appspot.com",
+            messagingSenderId: "354883781584"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body>
+
+<!-- navigation bar -->
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
-  <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
-  <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
-    <button class="tablinks" onclick="openTab(event, 'Login')">Login</button>
+
+    <!-- aligned left -->
+    <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'Instructions')">Instructions</button>
+    <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
+    <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
+    <button class="tablinks" onclick="openTab(event, 'FAQ')">FAQ</button>
+
+    <!-- aligned right -->
+    <button2 class="tablinks" onclick="openTab(event, 'Login')">Login</button2>
 </div>
 
 
 <div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Welcome to the Chromesthesia Trainer! If you're reading this, that means that you are
-  helping me complete my senior project. Chromesthesia is "a type of synesthesia in which
-      heard sounds automatically and involuntarily evoke an experience of color" The goal of this
-  project is to "teach" you how to have this experience.</p>
+
+    <!-- this is needed for homepage to be default (not sure why) -->
+    <script src="js/main.js"></script>
+
+    <div class="wrapper">
+        <h3>Home</h3>
+    </div>
+</div>
+
+<div id="Instructions" class="tabcontent">
+    <div class="wrapper">
+        <h3>How to practice</h3>
+    </div>
 </div>
 
 <div id="Practice" class="tabcontent">
-            <h3>Practice Mode</h3>
-  <script src="js/main.js"></script>
-  <pre>
-      <input type="button" value="unison"onclick="practice_interval(0)">
-      <input type="button" value="minor 2nd"onclick="practice_interval(1);">
-      <input type="button" value="major 2nd"onclick="practice_interval(2)">
-      <input type="button" value="minor 3rd"onclick="practice_interval(3)">
-      <input type="button" value="major 3rd"onclick="practice_interval(4);">
-      <input type="button" value="perfect 4th"onclick="practice_interval(5);">
-      <input type="button" value="tritone"onclick="practice_interval(6);">
-      <input type="button" value="perfect 5th"onclick="practice_interval(7);">
-      <input type="button" value="minor 6th"onclick="practice_interval(8);">
-      <input type="button" value="major 6th"onclick="practice_interval(9);">
-      <input type="button" value="minor 7th"onclick="practice_interval(10);">
-      <input type="button" value="major 7th"onclick="practice_interval(11);">
-      <input type="button" value="octave"onclick="practice_interval(12);">
-        </pre>
+    <div class="wrapper">
+        <h3>Learn intervals</h3>
+    </div>
 </div>
 
 <div id="Test" class="tabcontent">
-  <h3>Testing Mode</h3>
-    <script src="js/main.js"></script>
-  <pre>
-      <span id="timertext">Timer: 0</span>
-      <span id="guessestext">Guesses: 0</span>
-      <input type="button" value="start"onclick="test_interval()">
-      <input type="button" value="unison"onclick="check_interval(0)">
-      <input type="button" value="minor 2nd"onclick="check_interval(1);">
-      <input type="button" value="major 2nd"onclick="check_interval(2)">
-      <input type="button" value="minor 3rd"onclick="check_interval(3)">
-      <input type="button" value="major 3rd"onclick="check_interval(4);">
-      <input type="button" value="perfect 4th"onclick="check_interval(5);">
-      <input type="button" value="tritone"onclick="check_interval(6);">
-      <input type="button" value="perfect 5th"onclick="check_interval(7);">
-      <input type="button" value="minor 6th"onclick="check_interval(8);">
-      <input type="button" value="major 6th"onclick="check_interval(9);">
-      <input type="button" value="minor 7th"onclick="check_interval(10);">
-      <input type="button" value="major 7th"onclick="check_interval(11);">
-      <input type="button" value="octave"onclick="check_interval(12);">
+    <div class="wrapper">
+        <h3>Start training</h3>
+    </div>
+</div>
 
-        </pre>
+<div id="FAQ" class="tabcontent">
+    <div class="wrapper">
+        <h3>Frequently Asked Questions</h3>
+    </div>
 </div>
 
 <div id="Login" class="tabcontent">
-    <input type="email" id="email_field">
-    <input type="password" id="password_field">
-    <input type="button" value="login" onclick="login()">
-    <input type="button" value="logout" onclick="logout()">
-
+    <div class="wrapper">
+        <h3>Create an account</h3>
+    </div>
 </div>
 
 </body>

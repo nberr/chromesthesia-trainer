@@ -3,6 +3,9 @@
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+
+    padding-right: 100px; /* 3 */
+    padding-left:  100px; /* 3 */
 }
 
 /* Style the buttons inside the tab */
@@ -17,6 +20,28 @@
     font-size: 17px;
 }
 
+/* Style the buttons inside the tab */
+.tab button2 {
+    background-color: inherit;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button2:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button2.active {
+    background-color: #ccc;
+}
+
 /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #ddd;
@@ -29,10 +54,19 @@
 
 /* Style the tab content */
 .tabcontent {
-    text-align: center;
+    text-align: left;
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
 }
 
+.wrapper {
+    margin-right: 200px; /* 1 */
+    margin-left:  200px; /* 1 */
+
+    max-width: 960px; /* 2 */
+
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+}
