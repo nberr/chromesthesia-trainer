@@ -1,5 +1,6 @@
 //TODO: set the buttons to display the color rather than the name of the interval
 
+
 /* hard coded color values */
 var my_colors = {
     perfect_unison : '#c0c0c0',
@@ -165,28 +166,47 @@ function openTab(evt, tabName) {
 
 }
 
+function signup() {
+    //get email and pass
+    const email = document.getElementById('textEmail').value;
+    const pass = document.getElementById('textPassword').value;
+    const auth = firebase.auth();
+
+    //log in
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(ev => console.log(ev.message));
+
+    if (firebase.auth().currentUser) {
+        console.log(firebase.auth().currentUser.email);
+        //btnLogout.classList.remove('hide');
+    }
+    else {
+        console.log('not logged in');
+        //btnLogout.classList.add('hide');
+    }
+}
+
 function logout() {
-    firebase.auth().signOut().then(function() {
-       window.alert('Signed Out');
-    }, function(error) {
-        window.alert('Sign Out Error');
-    });
+    firebase.auth().signOut();
 }
 
 function login() {
-    var user_email = document.getElementById("email_field").value;
-    var user_pass = document.getElementById("password_field").value;
+    //get email and pass
+    const email = document.getElementById('textEmail').value;
+    const pass = document.getElementById('textPassword').value;
+    const auth = firebase.auth();
 
-    firebase.auth().signInWithEmailAndPassword(user_email, user_pass).catch(function (error) {
-        window.alert("ERROR");
-    });
+    //log in
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(ev => console.log(ev.message));
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-           window.alert("Login was successful!");
-        } else {
-            window.alert("No user logged in");
-        }
-    });
-
+    if (firebase.auth().currentUser) {
+        console.log(firebase.auth().currentUser.email);
+        //btnLogout.classList.remove('hide');
+    }
+    else {
+        console.log('not logged in');
+        //btnLogout.classList.add('hide');
+    }
 }
+

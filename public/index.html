@@ -11,8 +11,7 @@
     <!-- link w3 css file for containers -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- firebase stuff -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
         // Initialize Firebase
         var config = {
@@ -25,6 +24,8 @@
         };
         firebase.initializeApp(config);
     </script>
+
+
 </head>
 
 <body>
@@ -40,7 +41,7 @@
     <button class="tablinks" onclick="openTab(event, 'FAQ')">FAQ</button>
 
     <!-- aligned right -->
-    <button2 class="tablinks" onclick="openTab(event, 'Login')">Login</button2>
+    <button2 class="tablinks" onclick="openTab(event, 'Account')">Account</button2>
 </div>
 
 
@@ -66,6 +67,12 @@
 <div id="Instructions" class="tabcontent">
     <div class="wrapper">
         <h3>How to practice</h3>
+        <p class="wrapperpara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+        <p class="wrapperpara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
     </div>
 </div>
 
@@ -74,23 +81,43 @@
         <h3>Learn intervals</h3>
         <p class="wrapperpara">
             If you don't know the intervals, it's hard to identify them. Spend some time listening to the different
-            intervals.
+            intervals. Choose a root and an interval and then hit play!
         </p>
+
+        <select name="root">
+            <option value="C">C</option>
+            <option value="C#/Db">C#/Db</option>
+            <option value="D">D</option>
+            <option value="D#/Eb">D#/Eb</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#/Gb">F#/Gb</option>
+            <option value="G">G</option>
+            <option value="G#/Ab">G#/Ab</option>
+            <option value="A">A</option>
+            <option value="A#/Bb">A#/Bb</option>
+            <option value="B">B</option>
+        </select>
+
+        <select name="root">
+            <option value="Perfect Unison">Perfect Unison</option>
+            <option value="Minor Second">Minor Second</option>
+            <option value="Major Second">Major Second</option>
+            <option value="Minor Third">Minor Third</option>
+            <option value="Major Third">Major Third</option>
+            <option value="Perfect Fourth">Perfect Fourth</option>
+            <option value="Tritone">Tritone</option>
+            <option value="Perfect Fifth">Perfect Fifth</option>
+            <option value="Minor Sixth">Minor Sixth</option>
+            <option value="Major Sixth">Major Sixth</option>
+            <option value="Minor Seventh">Minor Seventh</option>
+            <option value="Major Seventh">Major Seventh</option>
+            <option value="Perfect Octave">Perfect Octave</option>
+        </select>
+        <button>Play</button>
+
     </div>
-    <div class="tab" align="center">
-        <button>C</button>
-        <button>C#/Db</button>
-        <button>D</button>
-        <button>D#/Eb</button>
-        <button>E</button>
-        <button>F</button>
-        <button>F#/Gb</button>
-        <button>G</button>
-        <button>G#/Ab</button>
-        <button>A</button>
-        <button>A#/Bb</button>
-        <button>B</button>
-    </div>
+
 </div>
 
 <div id="Test" class="tabcontent">
@@ -101,13 +128,41 @@
 
 <div id="FAQ" class="tabcontent">
     <div class="wrapper">
-        <h3>Frequently Asked Questions</h3>
+        <h3>Question 1</h3>
+        <p class="wrapperpara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+
+        <h3>Question 2</h3>
+        <p class="wrapperpara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+
+        <h3>Question 3</h3>
+        <p class="wrapperpara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+
+
     </div>
 </div>
 
-<div id="Login" class="tabcontent">
+<div id="Account" class="tabcontent">
     <div class="wrapper">
-        <h3>Create an account</h3>
+        <h3>Manage your account</h3>
+        <div class="wrapperpara">
+            <p>
+                <input id="textEmail" type="email" placeholder="Email">
+                <input id="textPassword" type="password" placeholder="Password">
+            </p>
+            <p>
+                <button id="btnLogin" onclick="login()">Log In</button>
+                <button id="btnSignUp" onclick="signup()">Sign Up</button>
+                <button id="btnLogout" onclick="logout()">Log Out</button>
+            </p>
+            <script src="js/main.js"></script>
+
+        </div>
     </div>
 </div>
 
