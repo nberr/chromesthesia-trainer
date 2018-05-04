@@ -123,6 +123,37 @@
 <div id="Test" class="tabcontent">
     <div class="wrapper">
         <h3>Start training</h3>
+        <div class="wrapperpara">
+            <button id="StartQuiz" onclick="start_quiz()">Start Quiz</button>
+        </div>
+        <div class="wrapperpara" id="QuizStuff" style="display: none">
+            <p>
+                <button>Hear Again</button>
+                <div>Timer</div>
+                <div>Correct</div>
+            </p>
+                <h3>Options</h3>
+            <p>
+                <button>Perfect Unison</button>
+                <button>Minor Second</button>
+                <button>Major Second</button>
+                <button>Minor Third</button>
+                <button>Major Third</button>
+                <button>Perfect Fourth</button>
+                <button>Tritone</button>
+            </p>
+            <p>
+                <button>Perfect Fifth</button>
+                <button>Minor Sixth</button>
+                <button>Major Sixth</button>
+                <button>Minor Seventh</button>
+                <button>Major Seventh</button>
+                <button>Perfect Octave</button>
+            </p>
+            <p>
+                <button>End Quiz</button>
+            </p>
+        </div>
     </div>
 </div>
 
@@ -159,6 +190,7 @@
                 <button id="btnLogin" onclick="login()">Log In</button>
                 <button id="btnSignUp" onclick="signup()">Sign Up</button>
                 <button id="btnLogout" onclick="logout()">Log Out</button>
+                <button id="status" onclick="check_login()">Check Status</button>
             </p>
             <script src="js/main.js"></script>
 

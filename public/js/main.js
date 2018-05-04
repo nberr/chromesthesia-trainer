@@ -166,25 +166,34 @@ function openTab(evt, tabName) {
 
 }
 
+function start_quiz() {
+    // hide the start quiz button
+    document.getElementById('StartQuiz').style.display = 'none';
+    document.getElementById('QuizStuff').style.display = 'block';
+
+    //check if user is color user
+}
+
+
+/*
+ * Authentication stuff
+ */
 function signup() {
     //get email and pass
     const email = document.getElementById('textEmail').value;
     const pass = document.getElementById('textPassword').value;
     const auth = firebase.auth();
 
-    //log in
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    //create the user
+    const promise = auth.createUserWithEmailAndPassword(email, pass).then(function log_user() {
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
+            isColor: Math.floor(Math.random()*2)
+        });
+    });
     promise.catch(ev => console.log(ev.message));
 
-    if (firebase.auth().currentUser) {
-        console.log(firebase.auth().currentUser.email);
-        //btnLogout.classList.remove('hide');
-    }
-    else {
-        console.log('not logged in');
-        //btnLogout.classList.add('hide');
-    }
 }
+
 
 function logout() {
     firebase.auth().signOut();
@@ -207,6 +216,15 @@ function login() {
     else {
         console.log('not logged in');
         //btnLogout.classList.add('hide');
+    }
+}
+
+function check_login() {
+    if (firebase.auth().currentUser) {
+        window.alert('You are logged in');
+    }
+    else {
+        window.alert('You are not logged in');
     }
 }
 
