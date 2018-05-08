@@ -157,7 +157,7 @@ function openTab(evt, tabName) {
 
 }
 
-/*
+
 function start_quiz() {
     // hide the start quiz button
     document.getElementById('StartQuiz').style.display = 'none';
@@ -169,7 +169,7 @@ function start_quiz() {
 function end_quiz() {
     document.getElementById('StartQuiz').style.display = 'block';
     document.getElementById('QuizStuff').style.display = 'none';
-}*/
+}
 
 /*
  * Authentication stuff

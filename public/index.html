@@ -125,7 +125,6 @@
         </select>
 
         <select name="intervals_practice" id="interval_dropdown">
-            <option value="perfect_unison">Perfect Unison</option>
             <option value="minor_second">Minor Second</option>
             <option value="major_second">Major Second</option>
             <option value="minor_third">Minor Third</option>
@@ -156,7 +155,7 @@
         <div class="wrapperpara">
             <button id="StartQuiz" onclick="start_quiz()">Start Quiz</button>
         </div>
-        <div class="wrapperpara" id="QuizStuff" style="display: none">
+        <div class="wrapperpara" id="QuizStuff">
             <p>
                 <button>Hear Again</button>
                 <div>Timer</div>
@@ -164,22 +163,22 @@
             </p>
                 <h3>Options</h3>
             <p>
-                <button>Perfect Unison</button>
-                <button>Minor Second</button>
-                <button>Major Second</button>
-                <button>Minor Third</button>
-                <button>Major Third</button>
-                <button>Perfect Fourth</button>
-                <button>Tritone</button>
+                <button class="answerbuttons">Minor Second</button>
+                <button class="answerbuttons">Major Second</button>
+                <button class="answerbuttons">Minor Third</button>
+
+                <button class="answerbuttons">Major Third</button>
+                <button class="answerbuttons">Perfect Fourth</button>
+                <button class="answerbuttons">Tritone</button>
+                <button class="answerbuttons">Perfect Fifth</button>
+
+                <button class="answerbuttons">Minor Sixth</button>
+                <button class="answerbuttons">Major Sixth</button>
+                <button class="answerbuttons">Minor Seventh</button>
+                <button class="answerbuttons">Major Seventh</button>
+                <button class="answerbuttons">Perfect Octave</button>
             </p>
-            <p>
-                <button>Perfect Fifth</button>
-                <button>Minor Sixth</button>
-                <button>Major Sixth</button>
-                <button>Minor Seventh</button>
-                <button>Major Seventh</button>
-                <button>Perfect Octave</button>
-            </p>
+
             <p>
                 <button id="EndQuiz" onclick="end_quiz()">End Quiz</button>
             </p>
@@ -230,4 +229,3 @@
 
 </body>
 </html>
-

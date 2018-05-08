@@ -81,3 +81,8 @@
     padding-left:  10px; /* 3 */
 }
 
+
+.answerbuttons {
+    height:50px;
+    width:150px;
+}
