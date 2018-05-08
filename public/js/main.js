@@ -1,8 +1,5 @@
-//TODO: set the buttons to display the color rather than the name of the interval
 
-
-/* hard coded color values */
-var my_colors = {
+var colors = {
     perfect_unison : '#c0c0c0',
     minor_second   : '#000000',
     major_second   : '#ff0000',
@@ -18,18 +15,11 @@ var my_colors = {
     perfect_octave : '#900090'
 };
 
-/* intervals allowed */
 var intervals = ["perfect_unison", "minor_second", "major_second", "minor_third", "major_third", "perfect_fourth",
                  "tritone", "perfect_fifth", "minor_sixth", "major_sixth", "minor_seventh", "major_seventh",
                  "perfect_octave"];
 
-/*
- * root of the interval
- * V1: only use c3 for the root
- */
-var roots = ['c3', 'c#3', 'd3', 'd#3', 'e3', 'f3', 'f#3','g3', 'g#3', 'a3', 'a#3', 'b3',
-    'c4', 'c#4', 'd4', 'd#4', 'e4', 'f4', 'f#4','g4', 'g#4', 'a4', 'a#4', 'b4',
-    'c5'];
+var roots = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
 
 // what is currently playing
@@ -167,6 +157,7 @@ function openTab(evt, tabName) {
 
 }
 
+/*
 function start_quiz() {
     // hide the start quiz button
     document.getElementById('StartQuiz').style.display = 'none';
@@ -178,7 +169,7 @@ function start_quiz() {
 function end_quiz() {
     document.getElementById('StartQuiz').style.display = 'block';
     document.getElementById('QuizStuff').style.display = 'none';
-}
+}*/
 
 /*
  * Authentication stuff
