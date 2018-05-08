@@ -43,6 +43,7 @@ var timer_func;
 
 var guesses;
 
+
 /*
  * Used for practice mode
  * Play the interval and set the appropriate color
@@ -174,6 +175,10 @@ function start_quiz() {
     //check if user is color user
 }
 
+function end_quiz() {
+    document.getElementById('StartQuiz').style.display = 'block';
+    document.getElementById('QuizStuff').style.display = 'none';
+}
 
 /*
  * Authentication stuff
@@ -187,7 +192,8 @@ function signup() {
     //create the user
     const promise = auth.createUserWithEmailAndPassword(email, pass).then(function log_user() {
         firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
-            isColor: Math.floor(Math.random()*2)
+            isColor: Math.floor(Math.random()*2),
+            email: email
         });
     });
     promise.catch(ev => console.log(ev.message));
@@ -221,7 +227,7 @@ function login() {
 
 function check_login() {
     if (firebase.auth().currentUser) {
-        window.alert('You are logged in');
+        window.alert('You are logged in as ' + firebase.auth().currentUser.email);
     }
     else {
         window.alert('You are not logged in');

@@ -37,8 +37,10 @@
     <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
     <button class="tablinks" onclick="openTab(event, 'Instructions')">Instructions</button>
     <button class="tablinks" onclick="openTab(event, 'Practice')">Practice</button>
-    <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
     <button class="tablinks" onclick="openTab(event, 'FAQ')">FAQ</button>
+    <button class="tablinks" onclick="openTab(event, 'Assessment')">Assessment</button>
+    <button class="tablinks" onclick="openTab(event, 'Test')">Test</button>
+
 
     <!-- aligned right -->
     <button2 class="tablinks" onclick="openTab(event, 'Account')">Account</button2>
@@ -68,15 +70,38 @@
     <div class="wrapper">
         <h3>How to practice</h3>
         <p class="wrapperpara">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-        </p>
-        <p class="wrapperpara">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            First of all, PLEASE MAKE SURE YOU ARE LOGGED IN. Your quiz results will NOT be logged if you are not logged
+             in.
+            <ol>
+                <li>
+                    Visit the practice tab. Get familiar with the different intervals. You can ignore the root for now.
+                    Intervals will sound similar regardless of the root.
+                </li>
+                <li>
+                    Read the FAQ. I've listed a few things that helped me. If you have suggestions to help other users,
+                    send me an email and I'll add them!
+                </li>
+                <li>
+                    Take the assessment quiz. Do this after you are familiar with the intervals. Test yourself for 30
+                    minutes.
+                </li>
+                <li>
+                    Take the quiz. Make sure to test yourself for 10-15 minutes per day. If you don't think you'll
+                    remember to take the test, set an alarm to remind yourself. If you're feeling motivated you can take
+                     the test multiple times per day but try to keep each session 10-15 minutes.
+                </li>
+                <li>
+                    After the experiment is over, take the assessment test again!
+                </li>
+            </ol>
         </p>
     </div>
 </div>
 
 <div id="Practice" class="tabcontent">
+
+    <script src="js/practice.js"></script>
+
     <div class="wrapper">
         <h3>Learn intervals</h3>
         <p class="wrapperpara">
@@ -84,39 +109,44 @@
             intervals. Choose a root and an interval and then hit play!
         </p>
 
-        <select name="root">
+        <select name="root_practice" id="root_dropdown">
             <option value="C">C</option>
-            <option value="C#/Db">C#/Db</option>
+            <option value="C#">C#/Db</option>
             <option value="D">D</option>
-            <option value="D#/Eb">D#/Eb</option>
+            <option value="D#">D#/Eb</option>
             <option value="E">E</option>
             <option value="F">F</option>
-            <option value="F#/Gb">F#/Gb</option>
+            <option value="F#">F#/Gb</option>
             <option value="G">G</option>
-            <option value="G#/Ab">G#/Ab</option>
+            <option value="G#">G#/Ab</option>
             <option value="A">A</option>
-            <option value="A#/Bb">A#/Bb</option>
+            <option value="A#">A#/Bb</option>
             <option value="B">B</option>
         </select>
 
-        <select name="root">
-            <option value="Perfect Unison">Perfect Unison</option>
-            <option value="Minor Second">Minor Second</option>
-            <option value="Major Second">Major Second</option>
-            <option value="Minor Third">Minor Third</option>
-            <option value="Major Third">Major Third</option>
-            <option value="Perfect Fourth">Perfect Fourth</option>
-            <option value="Tritone">Tritone</option>
-            <option value="Perfect Fifth">Perfect Fifth</option>
-            <option value="Minor Sixth">Minor Sixth</option>
-            <option value="Major Sixth">Major Sixth</option>
-            <option value="Minor Seventh">Minor Seventh</option>
-            <option value="Major Seventh">Major Seventh</option>
-            <option value="Perfect Octave">Perfect Octave</option>
+        <select name="intervals_practice" id="interval_dropdown">
+            <option value="perfect_unison">Perfect Unison</option>
+            <option value="minor_second">Minor Second</option>
+            <option value="major_second">Major Second</option>
+            <option value="minor_third">Minor Third</option>
+            <option value="major_third">Major Third</option>
+            <option value="perfect_fourth">Perfect Fourth</option>
+            <option value="tritone">Tritone</option>
+            <option value="perfect_fifth">Perfect Fifth</option>
+            <option value="minor_sixth">Minor Sixth</option>
+            <option value="major_sixth">Major Sixth</option>
+            <option value="minor_seventh">Minor Seventh</option>
+            <option value="major_seventh">Major Seventh</option>
+            <option value="perfect_octave">Perfect Octave</option>
         </select>
-        <button>Play</button>
+        <button id="practice_play" onclick="play_practice()">Play</button>
 
     </div>
+
+</div>
+
+<div id="Assessment" class="tabcontent">
+
 
 </div>
 
@@ -151,7 +181,7 @@
                 <button>Perfect Octave</button>
             </p>
             <p>
-                <button>End Quiz</button>
+                <button id="EndQuiz" onclick="end_quiz()">End Quiz</button>
             </p>
         </div>
     </div>
@@ -159,9 +189,9 @@
 
 <div id="FAQ" class="tabcontent">
     <div class="wrapper">
-        <h3>Question 1</h3>
+        <h3>Why can I only practice for 10-15 minutes?</h3>
         <p class="wrapperpara">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            
         </p>
 
         <h3>Question 2</h3>
