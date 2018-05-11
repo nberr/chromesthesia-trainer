@@ -1,38 +1,4 @@
 
-
-
-
-
-
-
-
-// what is currently playing
-var playing = null;
-var curr_interval = null;
-
-// timer for test mode
-var timer_start = null;
-var total_time = null;
-
-var guesses;
-
-
-/*
- * Used for practice mode
- * Play the interval and set the appropriate color
- */
-async function practice_interval(interval) {
-    playInterval(intervals[interval]);
-    await sleep(2000);
-    setColor(my_colors[intervals[interval]]);
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
-
 function setColor(color) {
     document.body.style.background = color;
 }
@@ -52,7 +18,6 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
     setColor('white');
-
 }
 
 /*

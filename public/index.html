@@ -185,6 +185,9 @@
 </div>
 
 <div id="Test" class="tabcontent">
+
+    <script src="js/quiz.js"></script>
+
     <div class="wrapper">
         <h3>Start training</h3>
         <div class="wrapperpara">
@@ -192,26 +195,26 @@
         </div>
         <div class="wrapperpara" id="QuizStuff" style="display: none;">
             <p>
-                <button>Hear Again</button>
-                <div>Timer</div>
-                <div>Correct</div>
+                <button id="HearAgainQuiz" onclick="hear_again_q()">Hear Again</button>
+                <div id="QuizTimer">Timer</div>
+                <div id="QuizCompleted">Completed</div>
             </p>
                 <h3>Options</h3>
             <p>
-                <button class="answerbuttons">Minor Second</button>
-                <button class="answerbuttons">Major Second</button>
-                <button class="answerbuttons">Minor Third</button>
+                <button class="answerbuttons" id="minor_second_quiz"   onclick="check_interval_q('minor_second')">Minor Second</button>
+                <button class="answerbuttons" id="major_second_quiz"   onclick="check_interval_q('major_second')">Major Second</button>
+                <button class="answerbuttons" id="minor_third_quiz"    onclick="check_interval_q('minor_third')">Minor Third</button>
 
-                <button class="answerbuttons">Major Third</button>
-                <button class="answerbuttons">Perfect Fourth</button>
-                <button class="answerbuttons">Tritone</button>
-                <button class="answerbuttons">Perfect Fifth</button>
+                <button class="answerbuttons" id="major_third_quiz"    onclick="check_interval_q('major_third')">Major Third</button>
+                <button class="answerbuttons" id="perfect_fourth_quiz" onclick="check_interval_q('perfect_fourth')">Perfect Fourth</button>
+                <button class="answerbuttons" id="tritone_quiz"        onclick="check_interval_q('tritone')">Tritone</button>
+                <button class="answerbuttons" id="perfect_fifth_quiz"  onclick="check_interval_q('perfect_fifth')">Perfect Fifth</button>
 
-                <button class="answerbuttons">Minor Sixth</button>
-                <button class="answerbuttons">Major Sixth</button>
-                <button class="answerbuttons">Minor Seventh</button>
-                <button class="answerbuttons">Major Seventh</button>
-                <button class="answerbuttons">Perfect Octave</button>
+                <button class="answerbuttons" id="minor_sixth_quiz"    onclick="check_interval_q('minor_sixth')">Minor Sixth</button>
+                <button class="answerbuttons" id="major_sixth_quiz"    onclick="check_interval_q('major_sixth')">Major Sixth</button>
+                <button class="answerbuttons" id="minor_seventh_quiz"  onclick="check_interval_q('minor_seventh')">Minor Seventh</button>
+                <button class="answerbuttons" id="major_seventh_quiz"  onclick="check_interval_q('major_seventh')">Major Seventh</button>
+                <button class="answerbuttons" id="perfect_octave_quiz" onclick="check_interval_q('perfect_octave')">Perfect Octave</button>
             </p>
 
             <p>
