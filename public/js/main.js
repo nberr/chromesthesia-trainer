@@ -91,11 +91,11 @@ function login() {
     promise.catch(ev => console.log(ev.message));
 
     if (firebase.auth().currentUser) {
-        console.log(firebase.auth().currentUser.email);
+        //console.log(firebase.auth().currentUser.email);
         //btnLogout.classList.remove('hide');
     }
     else {
-        console.log('not logged in');
+        //console.log('not logged in');
         //btnLogout.classList.add('hide');
     }
 }

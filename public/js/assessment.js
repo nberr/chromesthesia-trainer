@@ -18,7 +18,31 @@ let current_audio;
 
 let timer_func;
 
+let ref;
+let assessment_number;
+
 function start_assessment() {
+
+    assessment_number = 0;
+
+    if (firebase.auth().currentUser) {
+        // a user is logged in
+        ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+
+        // get the current assessment number (do any assessments exist?)
+        ref.once("value")
+            .then(function(snapshot) {
+                while (snapshot.hasChild("assessment" + assessment_number)) {
+                    assessment_number++;
+                }
+
+                firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/assessment' + assessment_number).set({
+                    date: readable_date()
+                });
+
+            });
+
+    }
 
     // hide the start button and show the assessment stuff
     document.getElementById('StartAssessment').style.display = 'none';
@@ -50,7 +74,15 @@ function start_assessment() {
 }
 
 function end_assessment() {
+    if (current_audio != null) {
+        current_audio.pause();
+    }
+
     end_time = Date.now();
+
+    firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/assessment' + assessment_number).update({
+        time: (end_time-start_time)/1000
+    });
 
     // show the start button and hide assessment stuff
     document.getElementById('StartAssessment').style.display = 'block';
@@ -65,6 +97,12 @@ function check_interval(interval) {
         question_end = Date.now();
 
         // store data in database
+        ref = firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/assessment' + assessment_number + '/question'+questions_completed).set({
+            interval: current_interval,
+            root: current_root,
+            guesses: wrong_count,
+            time: (question_end - question_start)/1000
+        });
 
         // move on to next question
         questions_completed++;
@@ -117,4 +155,22 @@ function hear_again() {
 
     current_audio = new Audio('res/audio/'.concat(current_root, '/', current_interval, '.wav'));
     current_audio.play();
+}
+
+function readable_date() {
+    let date = new Date();
+
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+
+    month = (month < 10 ? "0" : "") + month;
+    day = (day < 10 ? "0" : "") + day;
+    hour = (hour < 10 ? "0" : "") + hour;
+    min = (min < 10 ? "0" : "") + min;
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    return date.getFullYear() + "-" + month + "-" + day + "_" +  hour + ":" + min + ":" + sec;
 }
