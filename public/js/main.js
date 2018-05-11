@@ -1,11 +1,9 @@
 
 
 
-var intervals = ["perfect_unison", "minor_second", "major_second", "minor_third", "major_third", "perfect_fourth",
-                 "tritone", "perfect_fifth", "minor_sixth", "major_sixth", "minor_seventh", "major_seventh",
-                 "perfect_octave"];
 
-var roots = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+
 
 
 // what is currently playing
@@ -15,7 +13,6 @@ var curr_interval = null;
 // timer for test mode
 var timer_start = null;
 var total_time = null;
-var timer_func;
 
 var guesses;
 
@@ -38,14 +35,6 @@ function sleep(ms) {
 
 function setColor(color) {
     document.body.style.background = color;
-}
-
-
-
-
-function display_timer() {
-    //setColor(randomColor());
-    document.getElementById("timertext").innerHTML="Timer: " + Math.floor((Date.now() - timer_start)/1000) + " seconds";
 }
 
 document.getElementById("defaultOpen").click();

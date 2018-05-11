@@ -145,16 +145,19 @@
 </div>
 
 <div id="Assessment" class="tabcontent">
+
+    <script src="js/assessment.js"></script>
+
     <div class="wrapper">
         <h3>Start Assessment</h3>
         <div class="wrapperpara">
             <button id="StartAssessment" onclick="start_assessment()">Start Assessment</button>
         </div>
-        <div class="wrapperpara" id="AssessmentStuff">
+        <div class="wrapperpara" id="AssessmentStuff" style="display: none;">
             <p>
-                <button>Hear Again</button>
+                <button id="HearAgainAssessment" onclick="hear_again()">Hear Again</button>
             <div id="AssessmentTimer">Timer</div>
-            <div>Correct</div>
+            <div id="AssessmentCompleted">Completed</div>
             </p>
             <h3>Options</h3>
             <p>
@@ -175,7 +178,7 @@
             </p>
 
             <p>
-                <button id="EndAssessment" onclick="end_quiz()">End Quiz</button>
+                <button id="EndAssessment" onclick="end_assessment()">End Assessment</button>
             </p>
         </div>
     </div>
@@ -187,7 +190,7 @@
         <div class="wrapperpara">
             <button id="StartQuiz" onclick="start_quiz()">Start Quiz</button>
         </div>
-        <div class="wrapperpara" id="QuizStuff">
+        <div class="wrapperpara" id="QuizStuff" style="display: none;">
             <p>
                 <button>Hear Again</button>
                 <div>Timer</div>

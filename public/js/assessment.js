@@ -16,6 +16,8 @@ let current_interval;
 let current_root;
 let current_audio;
 
+let timer_func;
+
 function start_assessment() {
 
     // hide the start button and show the assessment stuff
@@ -29,6 +31,11 @@ function start_assessment() {
     questions_completed = 0;
     wrong_count = 0;
     question_start = start_time;
+
+    document.getElementById('AssessmentCompleted').innerHTML = 'Completed: ' + questions_completed;
+    document.getElementById('AssessmentTimer').innerText = 'Timer: 0';
+
+    timer_func = setInterval(show_timer, 1000);
 
     // get an interval and root for the user to listen to
     current_interval = intervals[uniform_random(0, intervals.length)];
@@ -48,6 +55,8 @@ function end_assessment() {
     // show the start button and hide assessment stuff
     document.getElementById('StartAssessment').style.display = 'block';
     document.getElementById('AssessmentStuff').style.display = 'none';
+
+    clearInterval(timer_func);
 }
 
 function check_interval(interval) {
@@ -61,6 +70,8 @@ function check_interval(interval) {
         questions_completed++;
         wrong_count = 0;
         question_start = Date.now();
+
+        document.getElementById('AssessmentCompleted').innerHTML = 'Completed: ' + questions_completed;
 
         // enable all button
         enable_intervals();
@@ -87,7 +98,7 @@ function check_interval(interval) {
 
 function enable_intervals() {
     for (let curr_int in intervals) {
-        document.getElementById(curr_int.concat('_assessment')).disabled = false;
+        document.getElementById(intervals[curr_int].concat('_assessment')).disabled = false;
     }
 }
 
@@ -99,3 +110,11 @@ function show_timer() {
     document.getElementById("AssessmentTimer").innerHTML="Timer: " + Math.floor((Date.now() - start_time)/1000) + " sec";
 }
 
+function hear_again() {
+    if (current_audio != null) {
+        current_audio.pause();
+    }
+
+    current_audio = new Audio('res/audio/'.concat(current_root, '/', current_interval, '.wav'));
+    current_audio.play();
+}
