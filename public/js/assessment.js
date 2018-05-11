@@ -3,7 +3,7 @@ let intervals = ["minor_second", "major_second", "minor_third", "major_third", "
     "tritone", "perfect_fifth", "minor_sixth", "major_sixth", "minor_seventh", "major_seventh",
     "perfect_octave"];
 
-let roots = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+let roots = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 
 // timer stuff
 let start_time;
