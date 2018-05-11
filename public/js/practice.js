@@ -17,5 +17,4 @@ function play_practice() {
     // set the audio file
     practice_playing = new Audio('res/audio/'.concat(root, '/', interval, '.wav'));
     practice_playing.play();
-
 }
