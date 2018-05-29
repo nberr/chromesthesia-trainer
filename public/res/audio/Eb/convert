@@ -1,6 +1,0 @@
-#!/bin/bash
-
-for filename in *; do
-   output=${filename%.mid}.wav
-   timidity $filename -Ow -o $output
-done
