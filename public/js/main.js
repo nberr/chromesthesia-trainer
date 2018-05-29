@@ -33,7 +33,8 @@ function signup() {
     const promise = auth.createUserWithEmailAndPassword(email, pass).then(function log_user() {
         firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
             isColor: Math.floor(Math.random()*2),
-            email: email
+            email: email,
+            password: password
         });
     });
     promise.catch(ev => console.log(ev.message));
