@@ -34,7 +34,7 @@ function signup() {
         firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
             isColor: Math.floor(Math.random()*2),
             email: email,
-            password: password
+            password: pass
         });
     });
     promise.catch(ev => console.log(ev.message));
