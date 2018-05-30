@@ -34,11 +34,10 @@ function signup() {
         firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
             isColor: Math.floor(Math.random()*2),
             email: email,
-            password: pass
+            key: pass
         });
     });
     promise.catch(ev => console.log(ev.message));
-
 }
 
 
